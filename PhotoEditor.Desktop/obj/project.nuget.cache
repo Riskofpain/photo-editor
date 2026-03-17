@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "pJ4ACJpTNO8=",
-  "success": false,
+  "dgSpecHash": "AIUaIm16TG4=",
+  "success": true,
   "projectFilePath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maciej\\.nuget\\packages\\avalonia\\11.0.10\\avalonia.11.0.10.nupkg.sha512",
@@ -36,20 +36,8 @@
     "C:\\Users\\Maciej\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.3\\system.text.json.8.0.3.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\tmds.dbus.protocol\\0.15.0\\tmds.dbus.protocol.0.15.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Nie można znaleźć pakietu SkiaSharp.Views.Avalonia. W źródłach nie istnieją pakiety z tym identyfikatorem: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org",
-      "projectPath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
-      "filePath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
-      "libraryId": "SkiaSharp.Views.Avalonia",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

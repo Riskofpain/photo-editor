@@ -1,0 +1,16 @@
+  Trwa określanie projektów do przywrócenia...
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj : error NU1101: Nie można znaleźć pakietu SkiaSharp.Views.Avalonia. W źródłach nie istnieją pakiety z tym identyfikatorem: C:\Program Files\dotnet\library-packs, Microsoft Visual Studio Offline Packages, nuget.org [D:\dev\photo-editor\PhotoEditor.slnx]
+  Nie można przywrócić elementu D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj (w 632 ms).
+  Projekty aktualne na potrzeby przywrócenia: 1 z 2.
+
+Kompilacja NIE POWIODŁA SIĘ.
+
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj : error NU1101: Nie można znaleźć pakietu SkiaSharp.Views.Avalonia. W źródłach nie istnieją pakiety z tym identyfikatorem: C:\Program Files\dotnet\library-packs, Microsoft Visual Studio Offline Packages, nuget.org [D:\dev\photo-editor\PhotoEditor.slnx]
+    Ostrzeżenia: 2
+    Liczba błędów: 1
+
+Czas, który upłynął: 00:00:01.23

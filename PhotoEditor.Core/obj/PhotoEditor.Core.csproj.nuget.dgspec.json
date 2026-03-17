@@ -59,7 +59,7 @@
             },
             "System.Text.Json": {
               "target": "Package",
-              "version": "[8.0.3, )",
+              "version": "[8.0.4, )",
               "versionCentrallyManaged": true
             }
           },
@@ -71,8 +71,7 @@
             "Avalonia.Themes.Fluent": "11.0.10",
             "ReactiveUI": "19.5.1",
             "SkiaSharp": "2.88.8",
-            "SkiaSharp.Views.Avalonia": "2.88.8",
-            "System.Text.Json": "8.0.3"
+            "System.Text.Json": "8.0.4"
           },
           "imports": [
             "net461",

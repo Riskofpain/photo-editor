@@ -1,0 +1,13 @@
+D:\dev\photo-editor\PhotoEditor.Core\bin\Debug\net8.0\PhotoEditor.Core.deps.json
+D:\dev\photo-editor\PhotoEditor.Core\bin\Debug\net8.0\PhotoEditor.Core.dll
+D:\dev\photo-editor\PhotoEditor.Core\bin\Debug\net8.0\PhotoEditor.Core.pdb
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.csproj.AssemblyReference.cache
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.AssemblyInfoInputs.cache
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.AssemblyInfo.cs
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.csproj.CoreCompileInputs.cache
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.sourcelink.json
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.dll
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\refint\PhotoEditor.Core.dll
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\PhotoEditor.Core.pdb
+D:\dev\photo-editor\PhotoEditor.Core\obj\Debug\net8.0\ref\PhotoEditor.Core.dll

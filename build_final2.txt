@@ -1,0 +1,15 @@
+  Trwa określanie projektów do przywrócenia...
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+  Wszystkie projekty są aktualne na potrzeby przywrócenia.
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+  PhotoEditor.Core -> D:\dev\photo-editor\PhotoEditor.Core\bin\Debug\net8.0\PhotoEditor.Core.dll
+  PhotoEditor.Desktop -> D:\dev\photo-editor\PhotoEditor.Desktop\bin\Debug\net8.0\PhotoEditor.Desktop.dll
+
+Kompilacja powiodła się.
+
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+    Ostrzeżenia: 2
+    Liczba błędów: 0
+
+Czas, który upłynął: 00:00:02.10

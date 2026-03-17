@@ -13,7 +13,6 @@
     <PackageReference Include="Avalonia.Fonts.Inter" />
     <PackageReference Include="Avalonia.ReactiveUI" />
     <PackageReference Include="ReactiveUI" />
-    <PackageReference Include="SkiaSharp.Views.Avalonia" />
   </ItemGroup>
 
   <ItemGroup>

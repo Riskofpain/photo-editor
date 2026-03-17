@@ -605,7 +605,7 @@
           }
         }
       },
-      "System.Text.Json/8.0.3": {
+      "System.Text.Json/8.0.4": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
@@ -641,7 +641,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "SkiaSharp": "2.88.8",
-          "System.Text.Json": "8.0.3"
+          "System.Text.Json": "8.0.4"
         },
         "compile": {
           "bin/placeholder/PhotoEditor.Core.dll": {}
@@ -1720,10 +1720,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/8.0.3": {
-      "sha512": "hpagS9joOwv6efWfrMmV9MjQXpiXZH72PgN067Ysfr6AWMSD1/1hEcvh/U5mUpPLezEWsOJSuVrmqDIVD958iA==",
+    "System.Text.Json/8.0.4": {
+      "sha512": "bAkhgDJ88XTsqczoxEMliSrpijKZHhbJQldhAmObj/RbrN3sU5dcokuXmWJWsdQAhiMJ9bTayWsL1C9fbbCRhw==",
       "type": "package",
-      "path": "system.text.json/8.0.3",
+      "path": "system.text.json/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1788,7 +1788,7 @@
         "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.8.0.3.nupkg.sha512",
+        "system.text.json.8.0.4.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1821,8 +1821,7 @@
       "Avalonia.ReactiveUI >= 11.0.10",
       "Avalonia.Themes.Fluent >= 11.0.10",
       "PhotoEditor.Core >= 1.0.0",
-      "ReactiveUI >= 19.5.1",
-      "SkiaSharp.Views.Avalonia >= 2.88.8"
+      "ReactiveUI >= 19.5.1"
     ]
   },
   "packageFolders": {
@@ -1910,11 +1909,6 @@
             "target": "Package",
             "version": "[19.5.1, )",
             "versionCentrallyManaged": true
-          },
-          "SkiaSharp.Views.Avalonia": {
-            "target": "Package",
-            "version": "[2.88.8, )",
-            "versionCentrallyManaged": true
           }
         },
         "centralPackageVersions": {
@@ -1925,8 +1919,7 @@
           "Avalonia.Themes.Fluent": "11.0.10",
           "ReactiveUI": "19.5.1",
           "SkiaSharp": "2.88.8",
-          "SkiaSharp.Views.Avalonia": "2.88.8",
-          "System.Text.Json": "8.0.3"
+          "System.Text.Json": "8.0.4"
         },
         "imports": [
           "net461",
@@ -1947,16 +1940,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Nie można znaleźć pakietu SkiaSharp.Views.Avalonia. W źródłach nie istnieją pakiety z tym identyfikatorem: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "SkiaSharp.Views.Avalonia",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

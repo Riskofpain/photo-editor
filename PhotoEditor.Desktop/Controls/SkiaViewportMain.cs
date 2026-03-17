@@ -175,7 +175,7 @@ public class SkiaViewportMain : Control
             if (leaseFeature == null) return;
             
             using var lease = leaseFeature.Lease();
-            var canvas = lease.SkiaCanvas;
+            var canvas = lease.SkCanvas;
             
             canvas.Save();
             

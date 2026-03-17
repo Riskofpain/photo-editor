@@ -79,7 +79,7 @@
           }
         }
       },
-      "System.Text.Json/8.0.3": {
+      "System.Text.Json/8.0.4": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
@@ -258,10 +258,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/8.0.3": {
-      "sha512": "hpagS9joOwv6efWfrMmV9MjQXpiXZH72PgN067Ysfr6AWMSD1/1hEcvh/U5mUpPLezEWsOJSuVrmqDIVD958iA==",
+    "System.Text.Json/8.0.4": {
+      "sha512": "bAkhgDJ88XTsqczoxEMliSrpijKZHhbJQldhAmObj/RbrN3sU5dcokuXmWJWsdQAhiMJ9bTayWsL1C9fbbCRhw==",
       "type": "package",
-      "path": "system.text.json/8.0.3",
+      "path": "system.text.json/8.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -326,7 +326,7 @@
         "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.8.0.3.nupkg.sha512",
+        "system.text.json.8.0.4.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -335,7 +335,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "SkiaSharp >= 2.88.8",
-      "System.Text.Json >= 8.0.3"
+      "System.Text.Json >= 8.0.4"
     ]
   },
   "packageFolders": {
@@ -397,7 +397,7 @@
           },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.3, )",
+            "version": "[8.0.4, )",
             "versionCentrallyManaged": true
           }
         },
@@ -409,8 +409,7 @@
           "Avalonia.Themes.Fluent": "11.0.10",
           "ReactiveUI": "19.5.1",
           "SkiaSharp": "2.88.8",
-          "SkiaSharp.Views.Avalonia": "2.88.8",
-          "System.Text.Json": "8.0.3"
+          "System.Text.Json": "8.0.4"
         },
         "imports": [
           "net461",
@@ -437,17 +436,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "message": "Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
       "libraryId": "System.Text.Json",
       "targetGraphs": [
         "net8.0"

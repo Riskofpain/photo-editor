@@ -1,0 +1,17 @@
+  Trwa określanie projektów do przywrócenia...
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+  Przywrócono element D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj (w 1,28 s).
+  Przywrócono element D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj (w 1,28 s).
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+  PhotoEditor.Core -> D:\dev\photo-editor\PhotoEditor.Core\bin\Debug\net8.0\PhotoEditor.Core.dll
+D:\dev\photo-editor\PhotoEditor.Desktop\Controls\SkiaViewportMain.cs(178,32): error CS1061: Element „ISkiaSharpApiLease” nie zawiera definicji „SkiaCanvas” i nie odnaleziono dostępnej metody rozszerzenia „SkiaCanvas”, która przyjmuje pierwszy argument typu „ISkiaSharpApiLease” (czy nie brakuje dyrektywy using lub odwołania do zestawu?). [D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj]
+
+Kompilacja NIE POWIODŁA SIĘ.
+
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4 [D:\dev\photo-editor\PhotoEditor.slnx]
+D:\dev\photo-editor\PhotoEditor.Core\PhotoEditor.Core.csproj : warning NU1903: Pakiet „System.Text.Json” 8.0.4 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4
+D:\dev\photo-editor\PhotoEditor.Desktop\Controls\SkiaViewportMain.cs(178,32): error CS1061: Element „ISkiaSharpApiLease” nie zawiera definicji „SkiaCanvas” i nie odnaleziono dostępnej metody rozszerzenia „SkiaCanvas”, która przyjmuje pierwszy argument typu „ISkiaSharpApiLease” (czy nie brakuje dyrektywy using lub odwołania do zestawu?). [D:\dev\photo-editor\PhotoEditor.Desktop\PhotoEditor.Desktop.csproj]
+    Ostrzeżenia: 2
+    Liczba błędów: 1
+
+Czas, który upłynął: 00:00:07.59
