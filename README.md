@@ -41,7 +41,14 @@ Restore dependencies and build the projects:
 dotnet build
 ```
 
-### 3. Run the application
+### 3. Build a Standalone Executable (No Setup Required)
+To create a fully portable `.exe` that includes the .NET 8 runtime and all SkiaSharp native libraries:
+```bash
+./build_release.ps1
+```
+The output `PhotoEditor.Desktop.exe` will be located in the `./publish` folder. It can be moved to any Windows machine and launched directly.
+
+### 4. Run the application during development
 Run the Avalonia desktop project directly:
 ```bash
 dotnet run --project PhotoEditor.Desktop

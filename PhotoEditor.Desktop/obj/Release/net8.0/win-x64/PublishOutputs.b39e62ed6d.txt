@@ -1,0 +1,3 @@
+D:\dev\photo-editor\publish\PhotoEditor.Desktop.pdb
+D:\dev\photo-editor\publish\PhotoEditor.Core.pdb
+D:\dev\photo-editor\publish\PhotoEditor.Desktop.exe
