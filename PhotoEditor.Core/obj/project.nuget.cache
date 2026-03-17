@@ -1,18 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "nCNYiQZAR8o=",
+  "dgSpecHash": "L40QmANtCkc=",
   "success": true,
   "projectFilePath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.23\\microsoft.net.illink.tasks.8.0.23.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.23\\microsoft.netcore.app.runtime.win-x64.8.0.23.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.23\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.23.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.23\\microsoft.aspnetcore.app.runtime.win-x64.8.0.23.nupkg.sha512"
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
   ],
   "logs": [
     {
@@ -24,8 +20,7 @@
       "filePath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
       "libraryId": "System.Text.Json",
       "targetGraphs": [
-        "net8.0",
-        "net8.0/win-x64"
+        "net8.0"
       ]
     }
   ]

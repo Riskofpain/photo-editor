@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhotoEditor.Desktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b1d15bcb0660bd9bafdda6e37f26c791f0f30d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7300f0b9a21f62e4daa4d9c0b11863a0da82fff")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhotoEditor.Desktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhotoEditor.Desktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,4 @@
 using PhotoEditor.Core.Models;
-using PhotoEditor.Core.Services;
 using ReactiveUI;
 using SkiaSharp;
 using System.IO;
@@ -11,6 +10,10 @@ public class MainWindowViewModel : ViewModelBase
     private SKBitmap? _originalImage;
     private AdjustmentParameters _parameters = new();
     
+    private float _exposure = 0f;
+    private float _contrast = 1f;
+    private float _saturation = 1f;
+
     public SKBitmap? OriginalImage
     {
         get => _originalImage;
@@ -20,30 +23,53 @@ public class MainWindowViewModel : ViewModelBase
     public AdjustmentParameters Parameters
     {
         get => _parameters;
-        set => this.RaiseAndSetIfChanged(ref _parameters, value);
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _parameters, value);
+            
+            // Sync individual slider properties when Parameters 
+            // object is fully replaced (e.g., loading a preset)
+            if (_exposure != value.Exposure)
+                this.RaiseAndSetIfChanged(ref _exposure, value.Exposure, nameof(Exposure));
+            if (_contrast != value.Contrast)
+                this.RaiseAndSetIfChanged(ref _contrast, value.Contrast, nameof(Contrast));
+            if (_saturation != value.Saturation)
+                this.RaiseAndSetIfChanged(ref _saturation, value.Saturation, nameof(Saturation));
+        }
     }
 
     public float Exposure
     {
-        get => Parameters.Exposure;
-        set { Parameters.Exposure = value; UpdateParameters(); }
+        get => _exposure;
+        set 
+        { 
+            this.RaiseAndSetIfChanged(ref _exposure, value);
+            UpdateParameters();
+        }
     }
     
     public float Contrast
     {
-        get => Parameters.Contrast;
-        set { Parameters.Contrast = value; UpdateParameters(); }
+        get => _contrast;
+        set 
+        { 
+            this.RaiseAndSetIfChanged(ref _contrast, value);
+            UpdateParameters();
+        }
     }
 
     public float Saturation
     {
-        get => Parameters.Saturation;
-        set { Parameters.Saturation = value; UpdateParameters(); }
+        get => _saturation;
+        set 
+        { 
+            this.RaiseAndSetIfChanged(ref _saturation, value);
+            UpdateParameters();
+        }
     }
 
     private void UpdateParameters()
     {
-        // Trigger a re-assignment to notify UI of complex object change and prompt render
         Parameters = new AdjustmentParameters 
         { 
             Exposure = this.Exposure,

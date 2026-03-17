@@ -59,26 +59,56 @@ public class SkiaViewportMain : Control
 
     private void RequestRender()
     {
-        if (_isRendering || _originalImage == null) return;
+        if (_originalImage == null) return;
+        
+        // Cancel previous render entirely if it's still running
+        if (_isRendering) return;
+        
         _isRendering = true;
+        
+        // Capture parameters locally to prevent them changing mid-render
+        var parametersSnapshot = new AdjustmentParameters 
+        {
+            Exposure = _currentParameters.Exposure,
+            Contrast = _currentParameters.Contrast,
+            Saturation = _currentParameters.Saturation
+        };
         
         Task.Run(async () => 
         {
             try 
             {
-                var newRender = await ImageProcessor.ProcessImageAsync(_originalImage, _currentParameters);
+                var newRender = await ImageProcessor.ProcessImageAsync(_originalImage, parametersSnapshot);
+                
                 Dispatcher.UIThread.Post(() => 
                 {
                     var old = _renderedImage;
                     _renderedImage = newRender;
-                    old?.Dispose();
+                    
                     InvalidateVisual();
+                    
+                    // We cannot dispose the old bitmap immediately because Avalonia's 
+                    // render thread might still be drawing it this exact millisecond.
+                    // Delaying disposal ensures the old frame clears the pipeline.
+                    if (old != null)
+                    {
+                        Task.Delay(100).ContinueWith(_ => old.Dispose());
+                    }
+                    
                     _isRendering = false;
+                    
+                    // If parameters changed while we were rendering, trigger again
+                    if (_currentParameters.Exposure != parametersSnapshot.Exposure ||
+                        _currentParameters.Contrast != parametersSnapshot.Contrast ||
+                        _currentParameters.Saturation != parametersSnapshot.Saturation)
+                    {
+                        RequestRender();
+                    }
                 });
             }
             catch 
             {
-                _isRendering = false;
+                Dispatcher.UIThread.Post(() => _isRendering = false);
             }
         });
     }
