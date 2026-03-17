@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "dgSpecHash": "pJ4ACJpTNO8=",
+  "success": false,
+  "projectFilePath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia\\11.0.10\\avalonia.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.buildservices\\0.0.29\\avalonia.buildservices.0.0.29.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.desktop\\11.0.10\\avalonia.desktop.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.fonts.inter\\11.0.10\\avalonia.fonts.inter.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.freedesktop\\11.0.10\\avalonia.freedesktop.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.native\\11.0.10\\avalonia.native.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.reactiveui\\11.0.10\\avalonia.reactiveui.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.remote.protocol\\11.0.10\\avalonia.remote.protocol.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.skia\\11.0.10\\avalonia.skia.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.themes.fluent\\11.0.10\\avalonia.themes.fluent.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.win32\\11.0.10\\avalonia.win32.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\avalonia.x11\\11.0.10\\avalonia.x11.11.0.10.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\dynamicdata\\8.0.2\\dynamicdata.8.0.2.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0\\harfbuzzsharp.nativeassets.linux.7.3.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\7.3.0\\harfbuzzsharp.nativeassets.webassembly.7.3.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0\\harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\reactiveui\\19.5.1\\reactiveui.19.5.1.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.7\\skiasharp.nativeassets.linux.2.88.7.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\2.88.7\\skiasharp.nativeassets.webassembly.2.88.7.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\splat\\14.7.1\\splat.14.7.1.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.io.pipelines\\6.0.0\\system.io.pipelines.6.0.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.3\\system.text.json.8.0.3.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\tmds.dbus.protocol\\0.15.0\\tmds.dbus.protocol.0.15.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Nie można znaleźć pakietu SkiaSharp.Views.Avalonia. W źródłach nie istnieją pakiety z tym identyfikatorem: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org",
+      "projectPath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
+      "filePath": "D:\\dev\\photo-editor\\PhotoEditor.Desktop\\PhotoEditor.Desktop.csproj",
+      "libraryId": "SkiaSharp.Views.Avalonia",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

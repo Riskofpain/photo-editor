@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "yiKBDDFGU0Q=",
+  "success": true,
+  "projectFilePath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\system.text.json\\8.0.3\\system.text.json.8.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
+      "projectPath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Pakiet „System.Text.Json” 8.0.3 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "projectPath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\dev\\photo-editor\\PhotoEditor.Core\\PhotoEditor.Core.csproj",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

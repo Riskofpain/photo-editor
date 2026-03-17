@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PhotoEditor.Core/PhotoEditor.Core.csproj" />
+  <Project Path="PhotoEditor.Desktop/PhotoEditor.Desktop.csproj" />
+</Solution>
