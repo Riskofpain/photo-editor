@@ -7,6 +7,10 @@ namespace PhotoEditor.Core.Processing;
 
 public class ImageProcessor
 {
+    /// <summary>
+    /// All parameters are expected in -100 to +100 range (Lightroom style).
+    /// 0 = no change for all sliders.
+    /// </summary>
     public static async Task<SKBitmap?> ProcessImageAsync(SKBitmap? source, AdjustmentParameters parameters)
     {
         if (source == null) return null;
@@ -21,7 +25,6 @@ public class ImageProcessor
                 using var canvas = new SKCanvas(result);
                 using var paint = new SKPaint();
 
-                // Build combined color matrix
                 var matrix = BuildColorMatrix(parameters);
                 paint.ColorFilter = SKColorFilter.CreateColorMatrix(matrix);
 
@@ -39,7 +42,7 @@ public class ImageProcessor
 
     private static float[] BuildColorMatrix(AdjustmentParameters p)
     {
-        // Start with identity matrix
+        // Start with identity
         float[] result = {
             1, 0, 0, 0, 0,
             0, 1, 0, 0, 0,
@@ -47,21 +50,24 @@ public class ImageProcessor
             0, 0, 0, 1, 0
         };
 
-        // 1. Apply Exposure
+        // Apply in order: Exposure → Contrast → Saturation
         result = MultiplyMatrix(result, CreateExposureMatrix(p.Exposure));
-
-        // 2. Apply Contrast
         result = MultiplyMatrix(result, CreateContrastMatrix(p.Contrast));
-
-        // 3. Apply Saturation
         result = MultiplyMatrix(result, CreateSaturationMatrix(p.Saturation));
 
         return result;
     }
 
+    /// <summary>
+    /// Exposure: -100 to +100 maps to approximately -2 EV to +2 EV.
+    /// 0 = no change (multiplier 1.0).
+    /// </summary>
     private static float[] CreateExposureMatrix(double exposure)
     {
-        float e = (float)Math.Pow(2, Math.Clamp(exposure, -5.0, 5.0));
+        // Map -100..+100 → -2..+2 EV stops
+        double ev = (exposure / 100.0) * 2.0;
+        float e = (float)Math.Pow(2.0, ev);
+
         return new float[]
         {
             e, 0, 0, 0, 0,
@@ -71,10 +77,17 @@ public class ImageProcessor
         };
     }
 
+    /// <summary>
+    /// Contrast: -100 to +100 maps to multiplier range 0.5 to 1.5.
+    /// 0 = no change (multiplier 1.0).
+    /// At -100, contrast = 0.5 (washed out). At +100, contrast = 1.5 (punchy).
+    /// </summary>
     private static float[] CreateContrastMatrix(double contrast)
     {
-        float c = (float)Math.Clamp(contrast, 0.0, 2.0);
+        // Map -100..+100 → 0.5..1.5
+        float c = (float)(1.0 + (contrast / 200.0));
         float t = 128f * (1f - c);
+
         return new float[]
         {
             c, 0, 0, 0, t,
@@ -84,13 +97,20 @@ public class ImageProcessor
         };
     }
 
+    /// <summary>
+    /// Saturation: -100 to +100 maps to multiplier 0.0 to 2.0.
+    /// 0 = no change (multiplier 1.0).
+    /// At -100, fully desaturated (grayscale). At +100, double saturation.
+    /// </summary>
     private static float[] CreateSaturationMatrix(double saturation)
     {
-        float s = (float)Math.Clamp(saturation, 0.0, 2.0);
+        // Map -100..+100 → 0.0..2.0
+        float s = (float)(1.0 + (saturation / 100.0));
         float inv = 1f - s;
         float R = 0.213f * inv;
         float G = 0.715f * inv;
         float B = 0.072f * inv;
+
         return new float[]
         {
             R + s, G,     B,     0, 0,
@@ -102,7 +122,6 @@ public class ImageProcessor
 
     /// <summary>
     /// Multiplies two 4x5 SkiaSharp color matrices (row-major).
-    /// The 5th column is the translation vector.
     /// </summary>
     private static float[] MultiplyMatrix(float[] a, float[] b)
     {
