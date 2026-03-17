@@ -9,10 +9,11 @@ public class MainWindowViewModel : ViewModelBase
 {
     private SKBitmap? _originalImage;
     private AdjustmentParameters _parameters = new();
-    
-    private float _exposure = 0f;
-    private float _contrast = 1f;
-    private float _saturation = 1f;
+
+    // All slider values are -100 to +100, default 0
+    private double _exposure = 0.0;
+    private double _contrast = 0.0;
+    private double _saturation = 0.0;
 
     public SKBitmap? OriginalImage
     {
@@ -26,9 +27,7 @@ public class MainWindowViewModel : ViewModelBase
         set
         {
             this.RaiseAndSetIfChanged(ref _parameters, value);
-            
-            // Sync individual slider properties when Parameters 
-            // object is fully replaced (e.g., loading a preset)
+
             if (_exposure != value.Exposure)
                 this.RaiseAndSetIfChanged(ref _exposure, value.Exposure, nameof(Exposure));
             if (_contrast != value.Contrast)
@@ -38,31 +37,31 @@ public class MainWindowViewModel : ViewModelBase
         }
     }
 
-    public float Exposure
+    public double Exposure
     {
         get => _exposure;
-        set 
-        { 
+        set
+        {
             this.RaiseAndSetIfChanged(ref _exposure, value);
             UpdateParameters();
         }
     }
-    
-    public float Contrast
+
+    public double Contrast
     {
         get => _contrast;
-        set 
-        { 
+        set
+        {
             this.RaiseAndSetIfChanged(ref _contrast, value);
             UpdateParameters();
         }
     }
 
-    public float Saturation
+    public double Saturation
     {
         get => _saturation;
-        set 
-        { 
+        set
+        {
             this.RaiseAndSetIfChanged(ref _saturation, value);
             UpdateParameters();
         }
@@ -70,14 +69,14 @@ public class MainWindowViewModel : ViewModelBase
 
     private void UpdateParameters()
     {
-        Parameters = new AdjustmentParameters 
-        { 
-            Exposure = this.Exposure,
-            Contrast = this.Contrast,
-            Saturation = this.Saturation
+        Parameters = new AdjustmentParameters
+        {
+            Exposure = _exposure,
+            Contrast = _contrast,
+            Saturation = _saturation
         };
     }
-    
+
     public void LoadImage(string path)
     {
         if (File.Exists(path))

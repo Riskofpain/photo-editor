@@ -25,13 +25,13 @@
                 <TextBlock Text="Basic Adjustments" FontWeight="Bold" Margin="0,10,0,0"/>
                 
                 <TextBlock Text="Exposure" />
-                <Slider Minimum="-5" Maximum="5" TickFrequency="0.1" IsSnapToTickEnabled="True" Value="{Binding Exposure}" />
+                <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Exposure}" />
 
                 <TextBlock Text="Contrast" />
-                <Slider Minimum="0" Maximum="2" TickFrequency="0.05" IsSnapToTickEnabled="True" Value="{Binding Contrast}" />
+                <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Contrast}" />
 
                 <TextBlock Text="Saturation" />
-                <Slider Minimum="0" Maximum="2" TickFrequency="0.05" IsSnapToTickEnabled="True" Value="{Binding Saturation}" />
+                <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Saturation}" />
                 
                 <TextBlock Text="Preset System" FontWeight="Bold" Margin="0,10,0,0"/>
                 <Button Content="Save Preset" Click="OnSavePresetClick" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>

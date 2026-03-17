@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using PhotoEditor.Core.Models;
 using SkiaSharp;
@@ -10,74 +11,118 @@ public class ImageProcessor
     {
         if (source == null) return null;
 
-        return await Task.Run(() => 
+        return await Task.Run(() =>
         {
             try
             {
                 var info = new SKImageInfo(source.Width, source.Height, SKColorType.Bgra8888);
                 var result = new SKBitmap(info);
-                
+
                 using var canvas = new SKCanvas(result);
                 using var paint = new SKPaint();
-                
-                // 1. Exposure and Contrast Matrix
-                var contrastAndExposure = CreateContrastExposureMatrix(parameters.Contrast, parameters.Exposure);
-                
-                // 2. Saturation
-                var saturation = SKColorFilter.CreateColorMatrix(CreateSaturationMatrix(parameters.Saturation));
-                
-                paint.ColorFilter = SKColorFilter.CreateCompose(saturation, SKColorFilter.CreateColorMatrix(contrastAndExposure));
-                
+
+                // Build combined color matrix
+                var matrix = BuildColorMatrix(parameters);
+                paint.ColorFilter = SKColorFilter.CreateColorMatrix(matrix);
+
                 canvas.DrawBitmap(source, 0, 0, paint);
-                
+
                 return result;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Console.WriteLine("SkiaSharp Processing Error: " + ex.Message);
-                return null; // Don't crash the whole app
+                Console.WriteLine("SkiaSharp Processing Error: " + ex.Message);
+                return null;
             }
         });
     }
-    
-    private static float[] CreateContrastExposureMatrix(float contrast, float exposure)
-    {
-        // Skia matrices expect values around 1.0f as identity for scaling.
-        // And translation offsets (-255 to 255) for shifting.
-        
-        // 1. Calculate exposure multiplier. 0 exposure = 1x (no change)
-        float expMult = (float)System.Math.Pow(2, exposure);
-        
-        // 2. Calculate contrast. 1.0 = normal. > 1.0 = high contrast. < 1.0 = low contrast.
-        float c = contrast;
-        
-        // The translation offset dynamically shifts the midpoint (128) back to the center 
-        // after scaling the contrast, so colors stretch evenly rather than just getting brighter/darker.
-        float t = (1.0f - c) * 128.0f; // Alternatively: (1.0f - c) / 2.0f * 255.0f
 
-        // The matrix essentially answers: NewColor = (OldColor * contrast * exposure) + translation
+    private static float[] BuildColorMatrix(AdjustmentParameters p)
+    {
+        // Start with identity matrix
+        float[] result = {
+            1, 0, 0, 0, 0,
+            0, 1, 0, 0, 0,
+            0, 0, 1, 0, 0,
+            0, 0, 0, 1, 0
+        };
+
+        // 1. Apply Exposure
+        result = MultiplyMatrix(result, CreateExposureMatrix(p.Exposure));
+
+        // 2. Apply Contrast
+        result = MultiplyMatrix(result, CreateContrastMatrix(p.Contrast));
+
+        // 3. Apply Saturation
+        result = MultiplyMatrix(result, CreateSaturationMatrix(p.Saturation));
+
+        return result;
+    }
+
+    private static float[] CreateExposureMatrix(double exposure)
+    {
+        float e = (float)Math.Pow(2, Math.Clamp(exposure, -5.0, 5.0));
         return new float[]
         {
-            c * expMult, 0, 0, 0, t * expMult,
-            0, c * expMult, 0, 0, t * expMult,
-            0, 0, c * expMult, 0, t * expMult,
+            e, 0, 0, 0, 0,
+            0, e, 0, 0, 0,
+            0, 0, e, 0, 0,
             0, 0, 0, 1, 0
         };
     }
-    
-    private static float[] CreateSaturationMatrix(float sat)
-    {
-        float invSat = 1 - sat;
-        float R = 0.213f * invSat;
-        float G = 0.715f * invSat;
-        float B = 0.072f * invSat;
 
+    private static float[] CreateContrastMatrix(double contrast)
+    {
+        float c = (float)Math.Clamp(contrast, 0.0, 2.0);
+        float t = 128f * (1f - c);
         return new float[]
         {
-            R + sat, G, B, 0, 0,
-            R, G + sat, B, 0, 0,
-            R, G, B + sat, 0, 0,
+            c, 0, 0, 0, t,
+            0, c, 0, 0, t,
+            0, 0, c, 0, t,
             0, 0, 0, 1, 0
         };
+    }
+
+    private static float[] CreateSaturationMatrix(double saturation)
+    {
+        float s = (float)Math.Clamp(saturation, 0.0, 2.0);
+        float inv = 1f - s;
+        float R = 0.213f * inv;
+        float G = 0.715f * inv;
+        float B = 0.072f * inv;
+        return new float[]
+        {
+            R + s, G,     B,     0, 0,
+            R,     G + s, B,     0, 0,
+            R,     G,     B + s, 0, 0,
+            0,     0,     0,     1, 0
+        };
+    }
+
+    /// <summary>
+    /// Multiplies two 4x5 SkiaSharp color matrices (row-major).
+    /// The 5th column is the translation vector.
+    /// </summary>
+    private static float[] MultiplyMatrix(float[] a, float[] b)
+    {
+        float[] result = new float[20];
+        for (int row = 0; row < 4; row++)
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                float sum = 0;
+                for (int k = 0; k < 4; k++)
+                {
+                    sum += a[row * 5 + k] * b[k * 5 + col];
+                }
+                if (col == 4)
+                {
+                    sum += a[row * 5 + 4];
+                }
+                result[row * 5 + col] = sum;
+            }
+        }
+        return result;
     }
 }
