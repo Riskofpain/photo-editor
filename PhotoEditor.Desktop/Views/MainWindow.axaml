@@ -27,12 +27,18 @@
                 <TextBlock Text="Exposure" />
                 <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Exposure}" />
 
+                <TextBlock Text="Brightness" />
+                <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Brightness}" />
+
                 <TextBlock Text="Contrast" />
                 <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Contrast}" />
 
                 <TextBlock Text="Saturation" />
                 <Slider Minimum="-100" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding Saturation}" />
-                
+
+                <TextBlock Text="Tools" FontWeight="Bold" Margin="0,10,0,0"/>
+                <Button Content="Remove Background" Click="OnRemoveBackgroundClick" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+
                 <TextBlock Text="Preset System" FontWeight="Bold" Margin="0,10,0,0"/>
                 <Button Content="Save Preset" Click="OnSavePresetClick" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
                 <Button Content="Load Preset" Click="OnLoadPresetClick" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>

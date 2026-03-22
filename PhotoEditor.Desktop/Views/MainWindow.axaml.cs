@@ -4,6 +4,7 @@ using Avalonia.Platform.Storage;
 using PhotoEditor.Desktop.ViewModels;
 using PhotoEditor.Core.Services;
 using PhotoEditor.Core.Models;
+using PhotoEditor.Core.Processing;
 using SkiaSharp;
 using System;
 using System.Linq;
@@ -46,16 +47,32 @@ public partial class MainWindow : Window
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = "Export Image",
-            DefaultExtension = "jpg",
-            FileTypeChoices = new[] { FilePickerFileTypes.ImageJpg, FilePickerFileTypes.ImagePng }
+            DefaultExtension = "png",
+            FileTypeChoices = new[] { FilePickerFileTypes.ImagePng, FilePickerFileTypes.ImageJpg }
         });
 
         if (file != null)
         {
-            // Fully render image based on params
-            var rendered = await PhotoEditor.Core.Processing.ImageProcessor.ProcessImageAsync(vm.OriginalImage, vm.Parameters);
+            var rendered = await ImageProcessor.ProcessImageAsync(vm.OriginalImage, vm.Parameters);
             if (rendered != null)
-                _exportService.ExportImage(rendered, file.Path.LocalPath, SKEncodedImageFormat.Jpeg, 90);
+            {
+                var ext = file.Path.LocalPath.ToLowerInvariant();
+                var format = ext.EndsWith(".png") ? SKEncodedImageFormat.Png : SKEncodedImageFormat.Jpeg;
+                _exportService.ExportImage(rendered, file.Path.LocalPath, format, 95);
+            }
+        }
+    }
+
+    private async void OnRemoveBackgroundClick(object sender, RoutedEventArgs e)
+    {
+        var vm = DataContext as MainWindowViewModel;
+        if (vm?.OriginalImage == null) return;
+
+        var result = await BackgroundRemovalService.RemoveBackgroundAsync(vm.OriginalImage);
+        if (result != null)
+        {
+            vm.OriginalImage = result;
+            vm.BackgroundRemoved = true;
         }
     }
 

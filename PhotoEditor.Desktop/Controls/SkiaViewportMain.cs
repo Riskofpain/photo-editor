@@ -70,6 +70,7 @@ public class SkiaViewportMain : Control
         var parametersSnapshot = new AdjustmentParameters 
         {
             Exposure = _currentParameters.Exposure,
+            Brightness = _currentParameters.Brightness,
             Contrast = _currentParameters.Contrast,
             Saturation = _currentParameters.Saturation
         };
@@ -99,6 +100,7 @@ public class SkiaViewportMain : Control
                     
                     // If parameters changed while we were rendering, trigger again
                     if (_currentParameters.Exposure != parametersSnapshot.Exposure ||
+                        _currentParameters.Brightness != parametersSnapshot.Brightness ||
                         _currentParameters.Contrast != parametersSnapshot.Contrast ||
                         _currentParameters.Saturation != parametersSnapshot.Saturation)
                     {

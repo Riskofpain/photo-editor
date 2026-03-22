@@ -10,10 +10,11 @@ public class MainWindowViewModel : ViewModelBase
     private SKBitmap? _originalImage;
     private AdjustmentParameters _parameters = new();
 
-    // All slider values are -100 to +100, default 0
     private double _exposure = 0.0;
+    private double _brightness = 0.0;
     private double _contrast = 0.0;
     private double _saturation = 0.0;
+    private bool _backgroundRemoved = false;
 
     public SKBitmap? OriginalImage
     {
@@ -30,6 +31,8 @@ public class MainWindowViewModel : ViewModelBase
 
             if (_exposure != value.Exposure)
                 this.RaiseAndSetIfChanged(ref _exposure, value.Exposure, nameof(Exposure));
+            if (_brightness != value.Brightness)
+                this.RaiseAndSetIfChanged(ref _brightness, value.Brightness, nameof(Brightness));
             if (_contrast != value.Contrast)
                 this.RaiseAndSetIfChanged(ref _contrast, value.Contrast, nameof(Contrast));
             if (_saturation != value.Saturation)
@@ -40,31 +43,31 @@ public class MainWindowViewModel : ViewModelBase
     public double Exposure
     {
         get => _exposure;
-        set
-        {
-            this.RaiseAndSetIfChanged(ref _exposure, value);
-            UpdateParameters();
-        }
+        set { this.RaiseAndSetIfChanged(ref _exposure, value); UpdateParameters(); }
+    }
+
+    public double Brightness
+    {
+        get => _brightness;
+        set { this.RaiseAndSetIfChanged(ref _brightness, value); UpdateParameters(); }
     }
 
     public double Contrast
     {
         get => _contrast;
-        set
-        {
-            this.RaiseAndSetIfChanged(ref _contrast, value);
-            UpdateParameters();
-        }
+        set { this.RaiseAndSetIfChanged(ref _contrast, value); UpdateParameters(); }
     }
 
     public double Saturation
     {
         get => _saturation;
-        set
-        {
-            this.RaiseAndSetIfChanged(ref _saturation, value);
-            UpdateParameters();
-        }
+        set { this.RaiseAndSetIfChanged(ref _saturation, value); UpdateParameters(); }
+    }
+
+    public bool BackgroundRemoved
+    {
+        get => _backgroundRemoved;
+        set => this.RaiseAndSetIfChanged(ref _backgroundRemoved, value);
     }
 
     private void UpdateParameters()
@@ -72,6 +75,7 @@ public class MainWindowViewModel : ViewModelBase
         Parameters = new AdjustmentParameters
         {
             Exposure = _exposure,
+            Brightness = _brightness,
             Contrast = _contrast,
             Saturation = _saturation
         };
@@ -83,6 +87,7 @@ public class MainWindowViewModel : ViewModelBase
         {
             var bitmap = SKBitmap.Decode(path);
             OriginalImage = bitmap;
+            BackgroundRemoved = false;
         }
     }
 }

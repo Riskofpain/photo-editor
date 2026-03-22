@@ -4,9 +4,9 @@ namespace PhotoEditor.Core.Models;
 
 public class AdjustmentParameters
 {
-    // All values stored as -100 to +100 (Lightroom-style)
-    // Default 0 = no change
+    // All values stored as -100 to +100 (Lightroom-style), default 0 = no change
     public double Exposure { get; set; } = 0.0;
+    public double Brightness { get; set; } = 0.0;
     public double Contrast { get; set; } = 0.0;
     public double Highlights { get; set; } = 0.0;
     public double Shadows { get; set; } = 0.0;
